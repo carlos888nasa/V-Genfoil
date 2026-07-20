@@ -35,7 +35,7 @@ Estado: **en fase de estudio previo a implementación**, ningún método está c
 - Singularidades elementales: fuente, sumidero, doblete, vórtice puntual, y su generalización a distribuciones continuas sobre un panel finito.
 - Principio de superposición (linealidad de Laplace).
 - Condición de Kutta (velocidad finita/tangencial igual en el borde de salida) — condición adicional impuesta para forzar solución física única, sin la cual el sistema estaría indeterminado.
-- Teorema de Kutta-Joukowski ($L' = \rho V_\infty \Gamma$) para pasar de circulación resuelta a coeficiente de sustentación.
+- Teorema de Kutta-Joukowski (\f$L' = \rho V_\infty \Gamma\f$) para pasar de circulación resuelta a coeficiente de sustentación.
 - Resolución de sistemas lineales (mismo bloque matemático que en PARSEC).
 
 **Alternativas que se podrían investigar:** formulación de vórtices constantes vs. fuentes+vórtices combinados por panel (hay varias variantes clásicas — Hess-Smith, formulación de Lewis, etc. — con distintos trade-offs de estabilidad numérica). Si alguien quiere aportar algo con impacto real, revisar qué formulación concreta de panel method conviene más aquí sería el punto de mayor valor.
@@ -56,12 +56,12 @@ Estado: **en fase de estudio previo a implementación**, ningún método está c
 - Es la combinación estándar en herramientas de referencia del campo (es, de hecho, la misma que usa Xfoil internamente), lo que facilita comparar resultados de forma consistente.
 - Thwaites es una correlación cerrada (barata) para la parte laminar; Head requiere integración numérica pero solo se activa tras la transición — balance razonable de coste/precisión.
 
-**Alternativas que se podrían investigar:** método $e^N$ para predicción de transición (más preciso que Michel pero bastante más caro computacionalmente, requiere resolver estabilidad lineal); si alguien quiere estudiar si el coste extra merece la pena para este caso de uso, es un punto abierto real.
+**Alternativas que se podrían investigar:** método \f$e^N\f$ para predicción de transición (más preciso que Michel pero bastante más caro computacionalmente, requiere resolver estabilidad lineal); si alguien quiere estudiar si el coste extra merece la pena para este caso de uso, es un punto abierto real.
 
 **Matemática de base:**
 - Ecuación integral de cantidad de movimiento (momentum integral equation) — base común de los tres métodos.
-- Concepto de espesor de desplazamiento ($\delta^*$) y de cantidad de movimiento ($\theta$).
-- Acoplamiento inviscido-viscoso: $\delta^*$ modifica la geometría efectiva que "ve" el panel method (esto conecta directamente con §2).
+- Concepto de espesor de desplazamiento (\f$\delta^*\f$) y de cantidad de movimiento (\f$\theta\f$).
+- Acoplamiento inviscido-viscoso: \f$\delta^*\f$ modifica la geometría efectiva que "ve" el panel method (esto conecta directamente con §2).
 - Integración numérica (trapecio/Simpson) para el método de Head.
 - Interpolación/búsqueda de raíces para localizar el punto exacto de transición o separación entre nodos discretos.
 
@@ -115,5 +115,5 @@ Si alguien del equipo quiere profundizar en algo con potencial de mejora real so
 
 1. **Formulación exacta del panel method** (vórtices constantes vs. fuente+vórtice, Hess-Smith vs. Lewis) — §2.
 2. **CST como alternativa a PARSEC** para la parametrización geométrica — §1.
-3. **Método $e^N$ vs. Michel** para transición, si el coste computacional se puede asumir — §3.
+3. **Método \f$e^N\f$ vs. Michel** para transición, si el coste computacional se puede asumir — §3.
 4. **MOEA/D o SPEA2 vs. NSGA-II** para el algoritmo multiobjetivo — §4.
