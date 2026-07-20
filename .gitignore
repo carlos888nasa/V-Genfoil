@@ -1,0 +1,16 @@
+# Directorios de compilación
+build/
+build-*/
+
+# Archivos de CLion
+.idea/
+cmake-build-*/
+
+# Documentación autogenerada
+html/
+
+# Binarios y temporales
+*.o
+*.exe
+*.out
+*/html/
