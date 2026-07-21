@@ -1,4 +1,4 @@
-# V-Genfoil — Algoritmos y Matemáticas Utilizadas
+# V-Genfoil — Algoritmos y Matemáticas Utilizadas {#math}
 
 Este documento resume **qué método se usa en cada parte del proyecto y por qué se eligió ese y no otro**, para que cualquiera del equipo pueda cuestionar las decisiones o proponer alternativas mejores. No es documentación de uso ni de arquitectura de código (eso está en `README.md` y `DESIGN.md`) — es específicamente el mapa matemático/algorítmico del proyecto.
 

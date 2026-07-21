@@ -5,8 +5,8 @@ Este es el índice de la documentación generada a partir del código (Doxygen).
 Si buscas qué es V-Genfoil, cómo compilarlo o la estructura de carpetas del repositorio, esa información vive en el `README.md` del proyecto, no aquí. Esta página es el punto de entrada para navegar por las clases y módulos reales del código fuente.
 
 Para profundizar en el porqué de cada decisión, la base matemática o los algoritmos, no se repite aquí — están documentados aparte:
-- **Justificación de arquitectura:** `docs/DESIGN.md`
-- **Algoritmos y matemáticas:** `docs/ALGORITHMS_AND_MATH.md`
+- **Justificación de arquitectura:** \ref design
+- **Algoritmos y matemáticas:** \ref math
 - **Derivaciones teóricas completas:** `docs/theory/`
 
 ---

@@ -1,20 +1,15 @@
 html {
-    /* Colores corporativos VANTUS */
-    --primary-color: #ff8000;
-    --primary-dark-color: #cc6600;
-    --primary-light-color: #ffb366;
+    /* Sobreescribir las variables específicas de Doxygen Awesome */
+    --doxygen-awesome-page-background-color: #000000;
+    --doxygen-awesome-background-color: #1c1c1e;
+    --doxygen-awesome-sidebar-background-color: #1c1c1e;
 
-    /* Fondos y Modo Oscuro VANTUS */
-    --page-background-color: #000000;
-    --background-color: #1c1c1e;
-    --header-background-color: #1c1c1e;
+    --doxygen-awesome-primary-color: #ff8000;
+    --doxygen-awesome-heading-color: #ff8000;
 
-    /* Textos y Bordes */
-    --text-color-normal: #f4f4f4;
-    --text-color-muted: #a1a1a6;
-    --header-text-color: #f4f4f4;
-    --border-color: rgba(255, 255, 255, 0.1);
+    --doxygen-awesome-text-color: #f4f4f4;
+    --doxygen-awesome-sidebar-text-color: #f4f4f4;
 
-    /* Tipografía moderna de Apple/Windows */
-    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --doxygen-awesome-border-color: rgba(255, 255, 255, 0.1);
+    --doxygen-awesome-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }

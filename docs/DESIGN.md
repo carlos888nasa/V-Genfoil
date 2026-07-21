@@ -1,4 +1,4 @@
-# V-Genfoil — Diseño y Convenciones de Ingeniería
+# V-Genfoil — Diseño y Convenciones de Ingeniería {#design}
 
 Este documento cubre *cómo* se construye y documenta el proyecto: decisiones de arquitectura, convenciones de documentación de código, y cómo un código desarrollado en Linux se entrega como ejecutable nativo a usuarios que no usan Linux. La teoría física/matemática (derivación de PARSEC, formulación del panel method, ecuaciones de capa límite, formulación de NSGA-II) vive por separado en `docs/theory/`.
 
