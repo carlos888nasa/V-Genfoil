@@ -79,3 +79,8 @@ Proyecto activo del equipo VANTUS AeroDesign Team. La Fase 0 (arquitectura de th
 ## Licencia
 
 Por definir.
+
+## Agradecimientos / Third-Party
+La interfaz gráfica de la documentación técnica utiliza el tema
+[Doxygen Awesome CSS](https://github.com/jothepro/doxygen-awesome-css)
+creado por jothepro (Licencia MIT), modificado con los colores corporativos de VANTUS.

@@ -1,41 +1,20 @@
-:root {
-    --color-fondo: #000000;
-    --color-fondo-final: #1c1c1e;
-    --color-secundario: #ff8000;
-    --color-texto: #f4f4f4;
-    --color-texto-muted: #a1a1a6;
-    --color-borde: rgba(255, 255, 255, 0.1);
-    --fuente-principal: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
+html {
+    /* Colores corporativos VANTUS */
+    --primary-color: #ff8000;
+    --primary-dark-color: #cc6600;
+    --primary-light-color: #ffb366;
 
-/* Sobreescribir la base de Doxygen */
-body, table, div, p, dl, .title {
-    background-color: var(--color-fondo) !important;
-    color: var(--color-texto) !important;
-    font-family: var(--fuente-principal) !important;
-}
+    /* Fondos y Modo Oscuro VANTUS */
+    --page-background-color: #000000;
+    --background-color: #1c1c1e;
+    --header-background-color: #1c1c1e;
 
-/* Acentos y enlaces en Naranja VANTUS */
-a, a:visited, a:hover, a:active, .el {
-    color: var(--color-secundario) !important;
-    text-decoration: none;
-}
+    /* Textos y Bordes */
+    --text-color-normal: #f4f4f4;
+    --text-color-muted: #a1a1a6;
+    --header-text-color: #f4f4f4;
+    --border-color: rgba(255, 255, 255, 0.1);
 
-/* Barras de navegación y menús */
-.header, .navpath, .tabs, .tabs2, .tabs3 {
-    background-color: var(--color-fondo-final) !important;
-    border-color: var(--color-borde) !important;
-    background-image: none !important; /* Quita los degradados feos por defecto */
-}
-
-/* Títulos */
-h1, h2, h3, h4, h5, h6 {
-    color: var(--color-secundario) !important;
-}
-
-/* Cajas de código y documentación */
-.fragment, .memdoc, .memitem, .memproto {
-    background-color: var(--color-fondo-final) !important;
-    border: 1px solid var(--color-borde) !important;
-    color: var(--color-texto) !important;
+    /* Tipografía moderna de Apple/Windows */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
