@@ -1,15 +1,56 @@
+/* vantus.css — override de colores corporativos sobre doxygen-awesome-css */
+
 html {
-    /* Sobreescribir las variables específicas de Doxygen Awesome */
-    --doxygen-awesome-page-background-color: #000000;
-    --doxygen-awesome-background-color: #1c1c1e;
-    --doxygen-awesome-sidebar-background-color: #1c1c1e;
+    --primary-color: #ff8000;
+    --primary-dark-color: #cc6600;
+    --primary-light-color: #ff9933;
+    --on-primary-color: #000000;
+    --link-color: var(--primary-color);
 
-    --doxygen-awesome-primary-color: #ff8000;
-    --doxygen-awesome-heading-color: #ff8000;
+    --page-background-color: #000000;
+    --page-foreground-color: #f4f4f4;
+    --page-secondary-foreground-color: #cfcfcf;
 
-    --doxygen-awesome-text-color: #f4f4f4;
-    --doxygen-awesome-sidebar-text-color: #f4f4f4;
+    --side-nav-background: #1c1c1e;
+    --side-nav-foreground: #f4f4f4;
 
-    --doxygen-awesome-border-color: rgba(255, 255, 255, 0.1);
-    --doxygen-awesome-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --separator-color: rgba(255, 255, 255, 0.1);
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* La librería no tiene una variable de color para h1..h5 (heredan
+   --page-foreground-color por defecto): si quieres los títulos en
+   naranja corporativo hace falta una regla explícita, no una variable. */
+h1, h2, h3, h4, h5 {
+    color: var(--primary-color);
+}
+
+/* Sin esto, el modo oscuro del sistema/navegador pisa el override de
+   arriba: "html:not(.light-mode)" tiene más especificidad que "html". */
+@media (prefers-color-scheme: dark) {
+    html:not(.light-mode) {
+        --primary-color: #ff8000;
+        --primary-dark-color: #cc6600;
+        --primary-light-color: #ff9933;
+        --page-background-color: #000000;
+        --page-foreground-color: #f4f4f4;
+        --page-secondary-foreground-color: #cfcfcf;
+        --side-nav-background: #1c1c1e;
+        --side-nav-foreground: #f4f4f4;
+        --separator-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Mismo motivo, pero para quien use el toggle JS
+   (doxygen-awesome-darkmode-toggle.js) en vez del prefers-color-scheme. */
+html.dark-mode {
+    --primary-color: #ff8000;
+    --primary-dark-color: #cc6600;
+    --primary-light-color: #ff9933;
+    --page-background-color: #000000;
+    --page-foreground-color: #f4f4f4;
+    --page-secondary-foreground-color: #cfcfcf;
+    --side-nav-background: #1c1c1e;
+    --side-nav-foreground: #f4f4f4;
+    --separator-color: rgba(255, 255, 255, 0.1);
 }
