@@ -14,3 +14,6 @@ html/
 *.exe
 *.out
 */html/
+
+# Archivos generados por V-Genfoil
+output/

@@ -14,6 +14,7 @@ add_executable(V-Genfoil
         src/geometry/parsec.cpp
         src/geometry/parsec.cpp
         src/geometry/parsec.cpp
+        src/utils/config.h
 )
 
 # Enlazar Eigen3 a nuestro target

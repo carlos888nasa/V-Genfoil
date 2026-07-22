@@ -3,17 +3,21 @@
 //
 #include  <cassert>
 #include <cmath>
+#include <fstream>
+#include <iostream>
 #include <Eigen/Dense>
 
 #include "geometry/parsec.h"
+
+#include <iomanip>
 
 namespace {
 
     //Reparte y_te/dy_te/alpha_te/beta_te (bisectriz + cuña) en condicciones
     // de contorno independiente para cada superficie
     struct TrailingEdgeBC {
-        double y_upper, th_upper;
-        double y_lower, th_lower;
+        double y_upper = 0.0, th_upper = 0.0;
+        double y_lower = 0.0, th_lower = 0.0;
     };
 
     TrailingEdgeBC splitTrailingEdge(double y_te, double dy_th, double alpha_te, double beta_te) {
@@ -84,7 +88,7 @@ std::array<double, 6> Parsec::calculateCoefficients(
     return {a1, coeffs(0), coeffs(1), coeffs(2), coeffs(3), coeffs(4)};
 }
 
-double Parsec::getY(double x, bool isUpper) {
+double Parsec::getY(double x, bool isUpper) const {
     assert(x >= 0.0 && x <= 1.0);
     if (x == 0.0) return 0.0;
 
@@ -98,4 +102,41 @@ double Parsec::getY(double x, bool isUpper) {
         x_pow *= x;                 // avanza el exponente 1.0: 0.5, 1.5, 2.5, 3.5, 4.5, 5.5
     }
     return z;
+}
+
+void Parsec::exportToDat(const std::string &filename, int num_points) const {
+
+    if (num_points <= 1) {
+        std::cerr << "Error crítico: El número de punto debe de ser mayor que 1 \n";
+        return;
+    }
+
+    std::ofstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Error crítico: No se puede crear el archivo " << filename << "\n";
+        return;
+    }
+
+    // Cabecera (obligatorio para Xfoil)
+    file << "V-Genfoil_PARSEC_Geometria\n";
+
+    file << std::fixed << std::setprecision(6);
+
+    //Extradós (Upper surface): Desde X=1 (Borde de salida) hasta X=0 (Borde de ataque)
+    for (int i = num_points -1; i >=0 ; --i) {
+        double x = static_cast<double>(i)/(num_points -1);
+        double z = getY(x, /*isUpper=*/ true);
+
+        file<< std::setw(12) << x << std::setw(12) << z << "\n";
+    }
+
+    //Intradós (Lower surface): Desde X>0 hasta X=1 (Cierra el perfil)
+    for (int i = 1; i < num_points ; ++i) {
+        double x = static_cast<double>(i)/(num_points -1);
+        double z = getY(x, /*isUpper=*/ false);
+
+        file<< std::setw(12) << x << std::setw(12) << z << "\n";
+
+    }
+
 }
